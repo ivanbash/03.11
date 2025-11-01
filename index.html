@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3 ноября</title>
+  <style>
+    body {
+      background: #1a1a1a;
+      color: #f5f0e6;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap');
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+      color: #d4af37;
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.5s;
+    }
+
+    .line {
+      opacity: 0;
+      margin-bottom: 1.4rem;
+      font-size: 1.5rem;
+      transition: opacity 1s ease-out;
+    }
+
+    .highlight {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .math {
+      font-family: monospace;
+      color: #a8d8ea;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>3 ноября</h1>
+    <div id="content"></div>
+  </div>
+
+  <script>
+    const lines = [
+      '<span class="math">0*3 = 1–1</span>',
+      'Мы встретились с тобой в ноябре, в месяце из двух единичек. Так и мы раньше были одни.',
+      '<span class="math">1+1 = 2</span> — такая математика, дорогая моя, пришлась нам обоим по душе.',
+      'А что значит тройка в нашей формуле? Может, есть недостающий элемент? У нас впереди целая вечность — мы точно отыщем его, наш загадочный <span class="highlight">"+1"</span>.',
+      'Мы дополним наше семейное счастье и четвёртым, и пятым элементом.',
+      'Говоря про "четвёрку", почему же она не стала нашей датой? День народного... чего-то там. Тебе не понравилась моя шутка про ассимиляцию молдавского народа в уральских лесах? Даже так — нам было суждено встретиться третьего числа.',
+      'Здесь есть некое божественное провидение. Число "три" — святая Троица. Как и она, мы с тобой, моя милая, являемся частями одного целого. Чего-то такого, что сложно выразить одним словом, но очень близкого слову <span class="highlight">"брак"</span>.',
+      'Буквы. Они врут и зачастую не могут ничего объяснить. Но числа. Вот где правда.',
+      'Я наверняка знаю твой рост и свой, что между нами разница в сорок сантиметров, что наши размеры ног отличаются на десяток.',
+      'Я знаю, что если принять "Олеговича" = 15.6, то твой рост — это десять "Олеговичей".',
+      'Я уверен: вероятность нашей встречи была равна <span class="math">1</span>.',
+      'И с тобой я проведу тысячелетие, в котором наше счастье стремится к <span class="math">∞</span>'
+    ];
+
+    const content = document.getElementById('content');
+
+    lines.forEach((line, i) => {
+      const div = document.createElement('div');
+      div.className = 'line';
+      div.innerHTML = line;
+      content.appendChild(div);
+
+      // Постепенное появление строк с задержкой
+      setTimeout(() => {
+        div.style.opacity = '1';
+      }, 800 + i * 1200);
+    });
+  </script>
+</body>
+</html>
